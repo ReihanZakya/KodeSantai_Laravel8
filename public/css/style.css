@@ -1,0 +1,131 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    overflow-x: hidden !important;
+}
+
+.active{
+   border-bottom: solid 2px #FFFFFF;
+}
+
+.mybg-blue {
+    background-color: #77A6F7;
+    color: #FFFFFF;
+}
+
+.mybg-white {
+    background-color: #FFFFFF;
+    color: #77A6F7;
+}
+
+.myBorder-leftBlue {
+    border-left: solid 4px #77A6F7;
+}
+
+.myBorder-leftWhite {
+    border-left: solid 4px #FFFFFF;
+}
+
+.myBorder-rightWhite {
+    border-right: solid 4px #FFFFFF;
+}
+
+.myBtn-blue {
+    border: none;
+    background-color: #77A6F7;
+    color: #FFFFFF;
+    padding: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* box-shadow: 5px 5px 5px lightblue; */
+}
+
+.myBtn-blue:hover {
+    background-color: #6993db;
+}
+
+.myBtn-white {
+    border: none;
+    background-color: #FFFFFF;
+    color: #77A6F7;
+    padding: 12px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* box-shadow: 5px 5px 5px lightblue; */
+}
+
+.myBtn-white:hover{
+    background-color: #f4f4f4;
+}
+
+.f-lightblue {
+    color: #77A6F7;
+}
+
+.kebawahh {
+    margin-top: auto;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 50%;
+}
+
+.fs-judul {
+    font-size: 3rem;
+}
+
+.navbar {
+    padding: 0;
+    margin: 0;
+    background-color: #77A6F7;
+
+}
+
+/* KELEBIHAN */
+.kelebihan {
+    background-color: #D3E3FC;
+}
+
+/* Mulai Pembelajaran */
+.card {
+    border-radius: 0;
+    border: 0;
+}
+
+/* FOOTER */
+.footer {
+    padding: 50px 0;
+}
+
+.footer h5 {
+    color: white;
+}
+
+.footer p {
+    color: white;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li a {
+    color: white;
+}
+
+.footer ul li a i {
+    font-size: 24px;
+}
+
+.footer hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.footer p.text-white {
+    margin-bottom: 0;
+}
