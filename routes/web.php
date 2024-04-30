@@ -29,7 +29,10 @@ Route::get('/', function () {
 });
 
 // Route::get('/materials', [MaterialController::class, 'index']);
-Route::get('/login',[LoginController::class, 'index']);
+Route::get('/login',[LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class, 'authenticate']);
+
+
 Route::get('/register',[RegisterController::class, 'index']);
 
 Route::get('/themes', [ThemeController::class, 'index']);

@@ -5,16 +5,28 @@
         <div class="row m-5 shadow">
             <div class="col-md-6 p-0 bg-white">
                 <div class="m-5 p-5">
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    @if (session()->has('loginError'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('loginError') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
                     <h3 class="f-lightblue fw-bold">Masuk</h3>
                     <form action="/login" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label f-lightblue fs-5 fw-semibold">Email address</label>
-                            <input type="email" class="form-control text-secondary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Email">
+                            <label class="form-label f-lightblue fs-5 fw-semibold">Email address</label>
+                            <input type="email" name="email" class="form-control text-secondary" aria-describedby="emailHelp" placeholder="Masukkan Email">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label f-lightblue fs-5 fw-semibold">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Password">
+                            <label class="form-label f-lightblue fs-5 fw-semibold">Password</label>
+                            <input type="password" name="password" class="form-control" placeholder="Masukkan Password">
                         </div>
                         <div class="mb-3 fst-italic text-secondary">
                             <p>Lupa Password? <span><a href="">Klik Disini</a></span></p>

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Link;
+use App\Models\User;
 use App\Models\Theme;
 use App\Models\Category;
 use App\Models\Material;
@@ -18,6 +19,14 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+
+        User::create([
+            'name' => 'Reihan',
+            'username' => 'reihan',
+            'gender' => 'male',
+            'email' => 'reihan@gmail.com',
+            'password' => bcrypt('12345')
+        ]);
 
         Theme::create([
             'name' => 'Javascript',
