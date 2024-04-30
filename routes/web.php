@@ -3,9 +3,11 @@
 use App\Models\Theme;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MaterialController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +29,8 @@ Route::get('/', function () {
 });
 
 // Route::get('/materials', [MaterialController::class, 'index']);
+Route::get('/login',[LoginController::class, 'index']);
+Route::get('/register',[RegisterController::class, 'index']);
 
 Route::get('/themes', [ThemeController::class, 'index']);
 Route::post('/themes/getlink', [ThemeController::class, 'show']);

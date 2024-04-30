@@ -18,8 +18,8 @@ class CreateMaterialsTable extends Migration
             $table->foreignId('theme_id');
             $table->string('name')->unique();
             $table->string('slug')->unique();
-            // $table->string('jdl_link');
-            // $table->string('link');
+            $table->string('jdl_link');
+            $table->string('link');
             $table->timestamps();
         });
     }

@@ -19,15 +19,11 @@
                             @foreach ($materials as $material)
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                        <form action="/themes/getlink" method="POST">
-                                            @csrf
-                                            <input type="hidden" value="{{ $material->slug }}" name="getlink">
-                                            <button type="submit" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            <button type="" class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#{{ $material->slug }}" aria-expanded="false"
-                                                aria-controls="{{ $material->slug }}">
+                                                aria-controls="{{ $material->slug }}" onclick="sendToLocalStorage('{{ $material->slug }}')">
                                                 {{ $material->name }}
                                             </button>
-                                        </form>
                                     </h2>
                                     <div id="{{ $material->slug }}" class="accordion-collapse collapse"
                                         data-bs-parent="#accordionFlushExample">
@@ -38,7 +34,7 @@
                                             </div>
                                             <ul>
                                                 <li>
-                                                    {{-- <a href="{{ $link->link }}" target="_blank">{{ $link->judul_link }}</a> --}}
+                                                    <a href="{{ $material->link }}" target="_blank">{{ $material->jdl_link }}</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -46,10 +42,20 @@
                                 </div>
                             @endforeach
 
+                            @foreach ($links as $link)
+                                <p>{{ $link }}</p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        function sendToLocalStorage(slug) {
+            // Simpan slug ke local storage
+            localStorage.setItem('materialSlug', slug);
+        }
+    </script>
 @endsection

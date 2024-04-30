@@ -16,8 +16,8 @@ class MaterialFactory extends Factory
         return [
             'name' => $this->faker->sentence(3),
             'slug' => $this->faker->slug(),
-            // 'jdl_link' => $this->faker->sentence(4),
-            // 'link' => $this->faker->url(),
+            'jdl_link' => $this->faker->sentence(4),
+            'link' => $this->faker->url(),
             'theme_id' => mt_rand(1,24)
         ];
     }
