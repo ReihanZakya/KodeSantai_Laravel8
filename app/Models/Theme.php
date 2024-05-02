@@ -11,6 +11,9 @@ class Theme extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+    // protected $with = ['category'];
+
     public function category(){
         return $this->belongsTo(Category::class);
     }

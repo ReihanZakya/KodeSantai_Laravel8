@@ -68,11 +68,17 @@
                         </tfoot>
                         <tbody>
                             @foreach ($themes as $theme )
+                            {{-- {{ ($theme->category->name) }} --}}
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $theme->name }}</td>
                                 <td>{{ $theme->slug }}</td>
-                                <td>{{ $theme->category_id }}</td>
+                                <td>
+                                @if ($theme->category)
+                                    {{ $theme->category->name }}
+                                @else
+                                    Tidak ada kategori
+                                @endif</td>
                                 <td>{{ $theme->created_at }}</td>
                                 <td>{{ $theme->updated_at }}</td>
                                 <td class="d-flex">

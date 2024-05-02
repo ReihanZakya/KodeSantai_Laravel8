@@ -35,7 +35,7 @@
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between">
                 <h6 class="mt-3 font-weight-bold text-primary">Data Kategori</h6>
-                <a href="">
+                <a href="/dashboard/categories/create">
                     <button class="btn btn-primary">
                         Tambah
                         <i class="fa-solid fa-plus"></i>

@@ -21,12 +21,25 @@
                     <form action="/login" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <label class="form-label f-lightblue fs-5 fw-semibold">Email address</label>
-                            <input type="email" name="email" class="form-control text-secondary" aria-describedby="emailHelp" placeholder="Masukkan Email">
+                            <label class="form-label f-lightblue fs-5 fw-semibold">Email</label>
+                            <input type="email" name="email"
+                                class="form-control text-secondary @error('email') is-invalid @enderror"
+                                value="{{ old('email') }}" aria-describedby="emailHelp" placeholder="Masukkan Email">
+                            @error('email')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label f-lightblue fs-5 fw-semibold">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Masukkan Password">
+                            <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
+                                placeholder="Masukkan Password">
+                            @error('password')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="mb-3 fst-italic text-secondary">
                             <p>Lupa Password? <span><a href="">Klik Disini</a></span></p>

@@ -9,6 +9,8 @@ use App\Http\Controllers\ThemeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardThemeController;
+use App\Http\Controllers\DashboardCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,24 +51,14 @@ Route::get('/dashboard', function(){
     ]);
 });
 
-
-Route::get('/dashboard/categories', function(){
-    return view('dashboard.categories.index',[
-        'title' => 'Dashboard Category',
-        'categories' => Category::latest()->get()
-    ]);
-});
-
-Route::get('/dashboard/themes', function(){
-    return view('dashboard.themes.index',[
-        'title' => 'Dashboard Theme',
-        'themes' => Theme::latest()->get()
-    ]);
-});
-
 Route::get('/dashboard/materials', function(){
     return view('dashboard.materials.index',[
         'title' => 'Dashboard Theme',
         'materials' => Material::latest()->get()
     ]);
 });
+
+Route::get('/dashboard/categories/checkSlug',[DashboardCategoryController::class, 'checkSlug'])->middleware('auth');
+Route::resource('/dashboard/categories',DashboardCategoryController::class)->middleware('auth');
+
+Route::resource('/dashboard/themes',DashboardThemeController::class)->middleware('auth');
