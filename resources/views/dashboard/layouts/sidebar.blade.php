@@ -6,20 +6,20 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Dashboard</div>
     </a>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+    <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}"">
+        <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
 
-    <!-- Divider -->
+    {{-- <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
@@ -60,7 +60,7 @@
                 <a class="collapse-item" href="utilities-other.html">Other</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -71,7 +71,7 @@
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
             aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
@@ -89,20 +89,31 @@
                 <a class="collapse-item" href="blank.html">Blank Page</a>
             </div>
         </div>
-    </li>
+    </li> --}}
 
     <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+    <li class="nav-item {{ Request::is('dashboard/categories*') ? 'active' : '' }}">
+        <a class="nav-link" href="/dashboard/categories">
             <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+            <span>Kelola Kategori</span></a>
     </li>
 
-    <!-- Nav Item - Tables -->
+    <li class="nav-item {{ Request::is('dashboard/themes*') ? 'active' : '' }}">
+        <a class="nav-link" href="/dashboard/themes">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Kelola Tema</span></a>
+    </li>
+
+    <li class="nav-item {{ Request::is('dashboard/materials*') ? 'active' : '' }}">
+        <a class="nav-link" href="/dashboard/materials">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Kelola Materi</span></a>
+    </li>
+
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Tables</span></a>
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Kelola Pengumuman</span></a>
     </li>
 
     <!-- Divider -->

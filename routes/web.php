@@ -2,6 +2,7 @@
 
 use App\Models\Theme;
 use App\Models\Category;
+use App\Models\Material;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ThemeController;
@@ -43,5 +44,29 @@ Route::get('/categories',[CategoryController::class, 'index']);
 Route::get('/categories/{category:slug}',[CategoryController::class, 'show']);
 
 Route::get('/dashboard', function(){
-    return view('dashboard.index');
+    return view('dashboard.index',[
+        'title' => 'Dashboard'
+    ]);
+});
+
+
+Route::get('/dashboard/categories', function(){
+    return view('dashboard.categories.index',[
+        'title' => 'Dashboard Category',
+        'categories' => Category::latest()->get()
+    ]);
+});
+
+Route::get('/dashboard/themes', function(){
+    return view('dashboard.themes.index',[
+        'title' => 'Dashboard Theme',
+        'themes' => Theme::latest()->get()
+    ]);
+});
+
+Route::get('/dashboard/materials', function(){
+    return view('dashboard.materials.index',[
+        'title' => 'Dashboard Theme',
+        'materials' => Material::latest()->get()
+    ]);
 });
