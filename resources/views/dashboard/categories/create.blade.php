@@ -9,7 +9,7 @@
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
                     <input type="text" name="name" id="name"
-                        class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
+                        class="form-control text-capitalize @error('name') is-invalid @enderror" value="{{ old('name') }}">
                     @error('name')
                         <div class="invalid-feedback">
                             {{ $message }}
