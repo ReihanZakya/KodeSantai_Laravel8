@@ -33,7 +33,6 @@ Route::get('/login',[LoginController::class, 'index'])->name('login')->middlewar
 Route::post('/login',[LoginController::class, 'authenticate']);
 Route::post('/logout',[LoginController::class, 'logout']);
 
-
 Route::get('/register',[RegisterController::class, 'index']);
 
 Route::get('/themes', [ThemeController::class, 'index']);
@@ -42,3 +41,7 @@ Route::get('/themes/{theme:slug}', [ThemeController::class, 'show']);
 
 Route::get('/categories',[CategoryController::class, 'index']);
 Route::get('/categories/{category:slug}',[CategoryController::class, 'show']);
+
+Route::get('/dashboard', function(){
+    return view('dashboard.index');
+});
