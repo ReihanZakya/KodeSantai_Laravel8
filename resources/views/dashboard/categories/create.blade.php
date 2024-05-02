@@ -8,8 +8,8 @@
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Nama</label>
-                    <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}"
-                        aria-describedby="emailHelp">
+                    <input type="text" name="name" id="name"
+                        class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}">
                     @error('name')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -18,14 +18,12 @@
                 </div>
                 <div class="mb-3">
                     {{-- <label class="form-label">Slug</label> --}}
-                    <input type="hidden" name="slug" id="slug" class="form-control" value="{{ old('slug') }}"
-                        aria-describedby="emailHelp">
+                    <input type="hidden" name="slug" id="slug" class="form-control" value="{{ old('slug') }}">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Deskripsi</label>
-                    <textarea type="text" name="description" class="form-control" value="{{ old('description') }}"
-                        aria-describedby="emailHelp"></textarea>
-                        @error('description')
+                    <textarea type="text" name="description" class="form-control @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
+                    @error('description')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>
