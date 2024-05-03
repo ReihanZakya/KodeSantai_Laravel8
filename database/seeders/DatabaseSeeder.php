@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Theme;
 use App\Models\Category;
 use App\Models\Material;
+use App\Models\Announcement;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -62,5 +63,7 @@ class DatabaseSeeder extends Seeder
             'slug' => 'fullstack',
             'description' => 'Kembangkan sisi frontend dan backend aplikasi web, yaitu seluruh tumpukan pengembangan.'
         ]);
+
+        Announcement::factory(4)->create();
     }
 }

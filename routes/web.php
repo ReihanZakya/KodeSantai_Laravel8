@@ -3,6 +3,7 @@
 use App\Models\Theme;
 use App\Models\Category;
 use App\Models\Material;
+use App\Models\Announcement;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ThemeController;
@@ -27,7 +28,8 @@ Route::get('/', function () {
     return view('home',[
         'title' => 'Home',
         'categories' => Category::all(),
-        'themes' => Theme::paginate(16)
+        'themes' => Theme::paginate(16),
+        'announcements' => Announcement::latest()->get()
     ]);
 });
 
@@ -65,3 +67,5 @@ Route::get('/dashboard/categories/checkSlug',[DashboardCategoryController::class
 Route::resource('/dashboard/categories',DashboardCategoryController::class)->except('show')->middleware('auth');
 
 Route::resource('/dashboard/themes',DashboardThemeController::class)->middleware('auth');
+
+Route::resource('/dashboard/announcements',DashboardAnnouncementController::class)->middleware('auth');

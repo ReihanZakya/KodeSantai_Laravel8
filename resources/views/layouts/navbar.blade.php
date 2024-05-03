@@ -27,7 +27,7 @@
                         <ul class="navbar-nav">
                             <!-- Default dropstart button -->
                             <div class="btn-group dropstart me-3">
-                                <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown"
+                                <a class="nav-link text-white" data-bs-toggle="dropdown"
                                     aria-expanded="false">
                                     <i class="fas fa-bell fa-fw"></i>
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -41,32 +41,18 @@
                                             Pengumuman
                                         </h6>
                                     </li>
-                                    <li class="dropdown-item">
-                                        <a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div>
-                                                <div class="small text-gray-500">December 12, 2019</div>
-                                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                            </div>
-                                        </a>
-                                    </li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li class="dropdown-item">
-                                        <a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div>
-                                                <div class="small text-gray-500">December 12, 2019</div>
-                                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li class="dropdown-item">
-                                        <a class="dropdown-item d-flex align-items-center" href="#">
-                                            <div>
-                                                <div class="small text-gray-500">December 12, 2019</div>
-                                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                            </div>
-                                        </a>
-                                    </li>
+                                    @foreach ($announcements as $announcement)
+                                        <li class="dropdown-item">
+                                            <a class="dropdown-item d-flex align-items-center" target="blank" href="{{ $announcement->link }}">
+                                                <div>
+                                                    <div class="small text-secondary">{{ $announcement->created_at }}</div>
+                                                    <span class="font-weight-bold">{{ $announcement->title }}</span>
+                                                </div>
+                                            </a>
+                                        </li>
+                                        <li><hr class="dropdown-divider"></li>
+                                    @endforeach
 
                                 </ul>
                             </div>
