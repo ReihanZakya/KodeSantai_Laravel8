@@ -25,6 +25,52 @@
                 <div>
                     @auth
                         <ul class="navbar-nav">
+                            <!-- Default dropstart button -->
+                            <div class="btn-group dropstart me-3">
+                                <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <i class="fas fa-bell fa-fw"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        99+
+                                        <span class="visually-hidden">unread messages</span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-header">
+                                        <h6 class="dropdown-header text-primary">
+                                            Pengumuman
+                                        </h6>
+                                    </li>
+                                    <li class="dropdown-item">
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div>
+                                                <div class="small text-gray-500">December 12, 2019</div>
+                                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li class="dropdown-item">
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div>
+                                                <div class="small text-gray-500">December 12, 2019</div>
+                                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li class="dropdown-item">
+                                        <a class="dropdown-item d-flex align-items-center" href="#">
+                                            <div>
+                                                <div class="small text-gray-500">December 12, 2019</div>
+                                                <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+
                             <li class="nav-item dropdown ms-auto">
                                 <a class="nav-link dropdown-toggle text-white" href="#" role="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -50,12 +96,6 @@
                                 </ul>
                             </li>
                         </ul>
-                        {{-- <form action="/logout" method="POST">
-                            @csrf
-                            <button type="submit" class="myBtn-white fw-bold rounded py-1 px-2 m-0" href="/">
-                                Keluar
-                            </button>
-                        </form> --}}
                     @else
                         <a href="/login" class="text-decoration-none f-lightblue">
                             <button class="myBtn-white fw-bold rounded py-1 px-2 m-0">

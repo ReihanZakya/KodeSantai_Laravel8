@@ -82,7 +82,7 @@
                                         <td>{{ $category->created_at }}</td>
                                         <td>{{ $category->updated_at }}</td>
                                         <td class="d-flex">
-                                            <a href="" class="mx-2">
+                                            <a href="/dashboard/categories/{{ $category->slug }}/edit" class="mx-2">
                                                 <button class="btn btn-warning">
                                                     <i class="fa-solid fa-pencil"></i>
                                                 </button>

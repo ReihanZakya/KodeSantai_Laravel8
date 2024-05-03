@@ -10,11 +10,11 @@
         @include('dashboard.layouts.sidebar')
         {{-- End Sidebar --}}
 
-        <div class="flex-column">
+        {{-- <div class="flex-column"> --}}
             {{-- Content --}}
             @yield('content')
             {{-- End Content --}}
-        </div>
+        {{-- </div> --}}
 
     </div>
 

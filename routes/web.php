@@ -47,7 +47,10 @@ Route::get('/categories/{category:slug}',[CategoryController::class, 'show']);
 
 Route::get('/dashboard', function(){
     return view('dashboard.index',[
-        'title' => 'Dashboard'
+        'title' => 'Dashboard',
+        'categories' => Category::all(),
+        'themes' => Theme::all(),
+        'materials' => Material::all(),
     ]);
 });
 

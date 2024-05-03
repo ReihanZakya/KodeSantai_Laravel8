@@ -69,9 +69,12 @@ class DashboardCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('dashboard.categories.edit',[
+            'title' => 'Edit Kategori',
+            'category' => $category
+        ]);
     }
 
     /**
@@ -81,9 +84,23 @@ class DashboardCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+
+        $rules = [
+            'name' => 'required|max:255',
+            'description' => 'required'
+        ];
+
+        if($request->slug != $category->slug){
+            $rules['slug'] = 'required|unique:categories';
+        }
+
+        $validatedData = $request->validate($rules);
+        Category::where('id', $category->id)
+                -> update($validatedData);
+
+        return redirect('/dashboard/categories')->with('success', 'Kategori ' . $category->name . ' berhasil diupdate');
     }
 
     /**
@@ -95,7 +112,7 @@ class DashboardCategoryController extends Controller
     public function destroy(Category $category)
     {
         Category::destroy($category->id);
-        return redirect('/dashboard/categories')->with('success', 'Kategori berhasil dihapus');
+        return redirect('/dashboard/categories')->with('success', 'Kategori ' . $category->name . ' berhasil dihapus');
     }
 
     public function checkSlug(Request $request){
