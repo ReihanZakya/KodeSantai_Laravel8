@@ -16,7 +16,8 @@ class DashboardAnnouncementController extends Controller
     public function index()
     {
         return view('dashboard.announcements.index',[
-            'title' => "Kelola Pengumuman"
+            'title' => "Kelola Pengumuman",
+            'announcements' => Announcement::latest()->get()
         ]);
     }
 

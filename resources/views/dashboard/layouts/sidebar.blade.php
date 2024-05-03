@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -110,8 +110,8 @@
             <span>Kelola Materi</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+    <li class="nav-item {{ Request::is('dashboard/announcements*') ? 'active' : '' }}">
+        <a class="nav-link" href="/dashboard/announcements">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Kelola Pengumuman</span></a>
     </li>

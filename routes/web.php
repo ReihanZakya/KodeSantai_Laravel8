@@ -12,6 +12,7 @@ use App\Http\Controllers\MaterialController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardThemeController;
 use App\Http\Controllers\DashboardCategoryController;
+use App\Http\Controllers\DashboardAnnouncementController;
 
 /*
 |--------------------------------------------------------------------------
