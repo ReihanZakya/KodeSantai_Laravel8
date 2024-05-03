@@ -3,16 +3,18 @@
 
 @include('dashboard.layouts.head')
 
-<body id="page-top">
+<body id="page-top" style="overflow-x: hidden">
 
-    <div id="wrapper">
+    <div id="wrapper" >
         {{-- Sidebar --}}
         @include('dashboard.layouts.sidebar')
         {{-- End Sidebar --}}
 
-        {{-- Content --}}
-        @yield('content')
-        {{-- End Content --}}
+        <div class="flex-column">
+            {{-- Content --}}
+            @yield('content')
+            {{-- End Content --}}
+        </div>
 
     </div>
 

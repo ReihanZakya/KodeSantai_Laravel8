@@ -59,6 +59,6 @@ Route::get('/dashboard/materials', function(){
 });
 
 Route::get('/dashboard/categories/checkSlug',[DashboardCategoryController::class, 'checkSlug'])->middleware('auth');
-Route::resource('/dashboard/categories',DashboardCategoryController::class)->middleware('auth');
+Route::resource('/dashboard/categories',DashboardCategoryController::class)->except('show')->middleware('auth');
 
 Route::resource('/dashboard/themes',DashboardThemeController::class)->middleware('auth');
